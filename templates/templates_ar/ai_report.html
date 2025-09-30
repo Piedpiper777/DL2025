@@ -1,0 +1,23 @@
+{% extends "templates_ar/base.html" %} {% block styles %} {{ super() }}
+<link rel="stylesheet" href="{{ url_for('static', filename='train/css/train.css') }}" />
+{% endblock %} {% block content %} {{ super() }}
+
+<ol class="breadcrumb">
+  <li class="breadcrumb-item">您的位置</li>
+  <li class="breadcrumb-item active">
+    <a href='{{url_for('dashboard.dashboard_application')}}'>
+      应用程序
+    </a>
+  </li>
+  <li class="breadcrumb-item active">
+    <a href='{{url_for('dashboard.dashboard_ar')}}'>
+      AI报告2
+    </a>
+  </li>
+  <li class="breadcrumb-item active">ai报告2</li>
+</ol>
+
+<div class="iframe-container">
+  <iframe src="http://localhost:9201"></iframe>
+</div>
+{% endblock %} {% block scripts %} {{ super() }} {% endblock %}
