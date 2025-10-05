@@ -14,8 +14,11 @@
 /.vscode/
 /reports/
 **.pth
+/.git/
+/.vscode/
+
+**/__pycache__
 /user_data/
-/__pycache__/
 /.git/
 /.vscode/
 /neo4j5.26.4/

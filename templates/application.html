@@ -67,6 +67,11 @@
           <h2>ai报告生成</h2>
           <p></p>
           <input class="btn" type="button" value="查看更多" onclick='ar()' />
+      <div class="card_combine">
+        <div class="content_combine">
+          <h2>寿命预测</h2>
+          <p></p>
+          <input class="btn" type="button" value="查看更多" onclick='rul()'/>
         </div>
       </div>
       
@@ -109,7 +114,6 @@
   function fd() {
     window.location.href = "{{url_for('dashboard.dashboard_fd')}}";
   }
-
   function ic() {
     window.location.href = "{{url_for('dashboard.dashboard_ic')}}";
   }
@@ -121,6 +125,9 @@
   function ar() {
     window.location.href = "{{url_for('dashboard.dashboard_ar')}}";
   
+  function rul() {
+    window.location.href = "{{url_for('dashboard.dashboard_rul')}}";
+  }
   function kg() {
     window.location.href = "{{url_for('dashboard.dashboard_kg')}}";
   }
