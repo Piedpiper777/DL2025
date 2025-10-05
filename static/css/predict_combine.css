@@ -53,22 +53,44 @@
 }
 /* 分别设置应用程序图片 */
 .card_combine:nth-child(1)::before{
-    background-image: url(/static/images/classification.jpg);
+    background-image: url(/static/images/1classification.jpg);
+/*1.缺陷分类*/
 }
 .card_combine:nth-child(2)::before{
-    background-image: url(/static/images/segmentation.jpg);
+    background-image: url(/static/images/2segmentation.jpg);
+/*2.缺陷分割*/
 }
 .card_combine:nth-child(3)::before{
-    background-image: url(/static/images/detection.jpg);
+    background-image: url(/static/images/3detection.jpg);
+/*3.缺陷检测*/
 }
 .card_combine:nth-child(4)::before{
-    background-image: url(/static/images/faultdiagnosis.jpg);
+    background-image: url(/static/images/4faultdiagnosis.jpg);
+/*4.故障诊断*/
 }
 .card_combine:nth-child(5)::before{
-    background-image: url(/static/images/image_capture.jpg);
+    background-image: url(/static/images/5image_capture.jpg);
+/*5.图像采集*/
 }
+
 .card_combine:nth-child(6)::before{
-    background-image: url(/static/images/kg.jpg);
+    background-image: url(/static/images/6data_save.jpg);
+/*6.数据存储*/
+}
+
+.card_combine:nth-child(7)::before{
+    background-image: url(/static/images/9ai_report.png);
+/*7.ai报告生成*/  
+}
+
+.card_combine:nth-child(8)::before{
+    background-image: url(/static/images/7RUL.PNG);
+/*8.剩余寿命预测*/
+}
+
+.card_combine:nth-child(9)::before{
+    background-image: url(/static/images/8kg_llm.jpg);
+/*9.大模型知识图谱*/
 }
 
 /* 遮罩 */

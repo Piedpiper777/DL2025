@@ -34,7 +34,7 @@ def dashboard_application():
         "application.html",
         zh=zh_json["Dashboard"]
     )
-
+#1.缺陷分类
 @bp.route("/cls", methods=["GET", "POST"])
 @login_required
 def dashboard_cls():
@@ -46,7 +46,7 @@ def dashboard_cls():
         zh=zh_json["Dashboard"]
     )
 
-
+#2.缺陷分割
 @bp.route("/seg", methods=["GET", "POST"])
 @login_required
 def dashboard_seg():
@@ -58,6 +58,7 @@ def dashboard_seg():
         zh=zh_json["Dashboard"]
     )
 
+#3.缺陷检测
 @bp.route("/det", methods=["GET", "POST"])
 @login_required
 def dashboard_det():
@@ -69,6 +70,7 @@ def dashboard_det():
         zh=zh_json["Dashboard"]
     )
 
+#4.故障诊断
 @bp.route("/fd", methods=["GET", "POST"])
 @login_required
 def dashboard_fd():
@@ -79,7 +81,8 @@ def dashboard_fd():
         "templates_fd/dashboard.html",
         zh=zh_json["Dashboard"]
     )
-    
+
+#5.图像采集 
 @bp.route("/ic", methods=["GET", "POST"])
 @login_required
 def dashboard_ic():
@@ -91,6 +94,7 @@ def dashboard_ic():
         zh=zh_json["Dashboard"]
     )
 
+#6.数据存储
 @bp.route("/ds", methods=["GET", "POST"])
 @login_required
 def dashboard_ds():
@@ -101,6 +105,19 @@ def dashboard_ds():
         zh=zh_json["Dashboard"]
     )
 
+#7.AI报告生成
+@bp.route("/ar", methods=["GET", "POST"])
+@login_required
+def dashboard_ar():
+    # username = session["user"]
+    with open("language/text-zh.json", "r", encoding="utf-8") as f:
+        zh_json = json.load(f)
+    return render_template(
+        "templates_ar/dashboard.html",
+        zh=zh_json["Dashboard"]
+    )
+
+#8.剩余寿命预测
 @bp.route("/rul", methods=["GET", "POST"])
 @login_required
 def dashboard_rul():
@@ -112,6 +129,7 @@ def dashboard_rul():
         zh=zh_json["Dashboard"]
     )
 
+#9.大模型知识图谱
 @bp.route("/kg", methods=["GET", "POST"])
 @login_required
 def dashboard_kg():
@@ -122,16 +140,6 @@ def dashboard_kg():
         zh=zh_json["Dashboard"]
     )
 
-@bp.route("/ar", methods=["GET", "POST"])
-@login_required
-def dashboard_ar():
-    # username = session["user"]
-    with open("language/text-zh.json", "r", encoding="utf-8") as f:
-        zh_json = json.load(f)
-    return render_template(
-        "templates_ar/dashboard.html",
-        zh=zh_json["Dashboard"]
-    )
 # test 
 # @bp.route("/test", methods=["GET", "POST"])
 # @login_required
