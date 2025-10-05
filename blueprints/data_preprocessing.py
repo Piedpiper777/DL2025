@@ -8,3 +8,6 @@ bp = Blueprint(name="data_preprocessing", import_name=__name__, url_prefix="/dat
 def data_preprocessing_fd():
     return render_template("templates_fd/preprocessing.html")
 
+@bp.route("/rul", methods=["GET", "POST"])
+def data_preprocessing_rul():
+    return render_template("templates_rul/preprocessing.html")

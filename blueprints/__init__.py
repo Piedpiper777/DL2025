@@ -1,7 +1,7 @@
 from .user import bp as user_bp
 from .dashboard import bp as dashboard_bp
 from .datasets import bp as datasets_bp
-from .models import bp as models_bp  
+from .models import bp as models_bp
 from .train import bp as train_bp
 from .predict import bp as predict_bp
 from .test import bp as test_bp

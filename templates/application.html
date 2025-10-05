@@ -52,6 +52,13 @@
           <input class="btn" type="button" value="查看更多" onclick='ic()'/>
         </div>
       </div>
+      <div class="card_combine">
+        <div class="content_combine">
+          <h2>寿命预测</h2>
+          <p></p>
+          <input class="btn" type="button" value="查看更多" onclick='rul()'/>
+        </div>
+      </div>
       
       <div class="card_combine">
         <div class="content_combine">
@@ -92,11 +99,12 @@
   function fd() {
     window.location.href = "{{url_for('dashboard.dashboard_fd')}}";
   }
-
   function ic() {
     window.location.href = "{{url_for('dashboard.dashboard_ic')}}";
   }
-  
+  function rul() {
+    window.location.href = "{{url_for('dashboard.dashboard_rul')}}";
+  }
   function kg() {
     window.location.href = "{{url_for('dashboard.dashboard_kg')}}";
   }

@@ -19,3 +19,7 @@ def predict_det():
 @bp.route('/fd', methods=["GET", "POST"])
 def predict_fd():
     return render_template("templates_fd/predict.html")
+
+@bp.route('/rul', methods=["GET", "POST"])
+def predict_rul():
+    return render_template("templates_rul/predict.html")

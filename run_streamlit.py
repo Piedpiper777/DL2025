@@ -20,6 +20,7 @@ import os
 
 os.system(
     "streamlit run apps/upload_image_app.py --server.port 8500 --server.fileWatcherType none &" +
+    
     # 缺陷分类
     "streamlit run apps/cls_train_app.py --server.port 8501 --server.fileWatcherType none &" +
     "streamlit run apps/cls_predict_app.py --server.port 8502 --server.fileWatcherType none &" +
@@ -31,6 +32,11 @@ os.system(
     "streamlit run apps/fd_predict_app.py --server.port 8801 --server.fileWatcherType none &" +
     "streamlit run apps/fd_preprocessing_app.py --server.port 8802 --server.fileWatcherType none &" +
     "streamlit run apps/fd_train_app.py --server.port 8803 --server.fileWatcherType none &" +
+    # 寿命预测
+    "streamlit run apps/rul_predict_app.py --server.port 9001 --server.fileWatcherType none &" +
+    "streamlit run apps/rul_preprocessing_app.py --server.port 9002 --server.fileWatcherType none &" +
+    "streamlit run apps/rul_train_app.py --server.port 9003 --server.fileWatcherType none &" +
+    
     # 图像采集
     "streamlit run apps/image_capture_app.py --server.port 8901 --server.fileWatcherType none &"
     )
