@@ -67,6 +67,9 @@
 .card_combine:nth-child(5)::before{
     background-image: url(/static/images/image_capture.jpg);
 }
+.card_combine:nth-child(6)::before{
+    background-image: url(/static/images/kg.jpg);
+}
 
 /* 遮罩 */
 .card_combine::after{

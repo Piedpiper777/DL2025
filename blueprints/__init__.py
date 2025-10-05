@@ -8,8 +8,8 @@ from .test import bp as test_bp
 from .deployment import bp as deployment_bp
 from .models_storage import bp as models_storage_bp
 from .application import bp as application_bp
-from .models import bp as models_bp
 from .data_preprocessing import bp as data_preprocessing_bp
 from .image_capture import bp as image_capture_bp
 from .data_storage import bp as data_storage_bp
 from .ai_report import bp as ai_report_bp
+from .search import bp as search_bp  
