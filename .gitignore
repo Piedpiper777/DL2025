@@ -9,6 +9,8 @@
 /user_data/test/models/*.pth
 /user_data/test/*
 
-/__pycache__/
+**/__pycache__/
 /.git/
 /.vscode/
+/reports/
+**.pth
