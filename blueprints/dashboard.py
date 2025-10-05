@@ -101,8 +101,15 @@ def dashboard_rul():
         "templates_rul/dashboard.html",
         zh=zh_json["Dashboard"]
     )
-    
-    
+@bp.route("/kg", methods=["GET", "POST"])
+@login_required
+def dashboard_kg():
+    with open("language/text-zh.json", "r", encoding="utf-8") as f:
+        zh_json = json.load(f)
+    return render_template(
+        "templates_lk/dashboard.html",
+        zh=zh_json["Dashboard"]
+    )
 # test 
 # @bp.route("/test", methods=["GET", "POST"])
 # @login_required

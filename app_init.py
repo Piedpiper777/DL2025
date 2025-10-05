@@ -1,22 +1,27 @@
 import datetime
 
-from blueprints import (user_bp,         #12
-                        dashboard_bp,    #2
-                        datasets_bp,     #4
-                        models_bp,       #8
-                        train_bp,        #11
-                        predict_bp,      #9
-                        test_bp,         #10
-                        deployment_bp,   #5
-                        models_storage_bp,      #7
-                        application_bp,         #1
-                        data_preprocessing_bp,  #3
-                        image_capture_bp)       #6
+from blueprints import (user_bp,
+                        dashboard_bp,
+                        datasets_bp,
+                        models_bp,
+                        train_bp,
+                        predict_bp,
+                        test_bp,
+                        deployment_bp,
+                        models_storage_bp,
+                        application_bp,
+                        data_preprocessing_bp,
+                        image_capture_bp,
+                        search_bp)  
 from flask_bootstrap import Bootstrap
 from flask_migrate import Migrate
 from extensions import db, mail, app
 from global_variable import appConfig
 from app_config import config
+from flask import Flask
+from flask_session import Session
+import os
+import tempfile
 
 app.config.from_object(config)
 # 加载蓝图
@@ -32,6 +37,7 @@ app.register_blueprint(models_storage_bp)
 app.register_blueprint(application_bp)
 app.register_blueprint(data_preprocessing_bp)
 app.register_blueprint(image_capture_bp)
+app.register_blueprint(search_bp) 
 Bootstrap(app)
 
 # 设置密钥，用于hash加密
@@ -47,6 +53,21 @@ app.config["PERMANENT_SESSION_LIFETIME"] = datetime.timedelta(days=7)
 # 不对表单进行SCRF保护
 # TODO 应该要进行保护吧，到时候加一下
 app.config["WTF_CSRF_ENABLED"] = False
+
+# 配置服务器端会话
+SESSION_DIR = os.path.join(tempfile.gettempdir(), 'dlsystem_sessions')
+if not os.path.exists(SESSION_DIR):
+    os.makedirs(SESSION_DIR)
+
+app.config['SESSION_TYPE'] = 'filesystem'  # 使用文件系统存储
+app.config['SESSION_FILE_DIR'] = SESSION_DIR  # 设置文件目录
+app.config['SESSION_PERMANENT'] = True  # 使会话持久化
+app.config['SESSION_USE_SIGNER'] = True  # 对 cookie 进行签名
+app.config['PERMANENT_SESSION_LIFETIME'] = 86400  # 会话有效期（秒）
+app.config['SESSION_FILE_THRESHOLD'] = 500  # 会话文件数量阈值
+
+# 初始化 Flask-Session
+Session(app)
 
 db.init_app(app)
 migrate = Migrate(app, db)
