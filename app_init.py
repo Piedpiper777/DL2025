@@ -1,3 +1,4 @@
+"""文件初始化，加载蓝图，配置数据库等"""
 import datetime
 
 from blueprints import (user_bp,
