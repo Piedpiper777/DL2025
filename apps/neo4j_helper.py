@@ -7,7 +7,7 @@ from utils.kg.nlp_utils import process_question_with_llm  # 替换为新方法
 from py2neo import Graph, NodeMatcher
 
 # Neo4j相关配置信息，根据实际路径修改
-NEO4J_INSTALL_PATH = "/home/zhanggu/MyDoc/DLsystem/neo4j5.26.4"
+NEO4J_INSTALL_PATH = "/home/zhanggu/MyDoc/DL2025/neo4j5.26.4"
 NEO4J_BIN_PATH = os.path.join(NEO4J_INSTALL_PATH, "bin")
 # 启动Neo4j服务的命令，指定完整路径及参数
 NEO4J_START_COMMAND = [os.path.join(NEO4J_BIN_PATH, "neo4j"), "start"]
