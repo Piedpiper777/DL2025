@@ -1,4 +1,4 @@
-#旧版，以requirements.txt为准
+#旧版，同时参考requirements.txt
 pip install dill==0.3.5.1
 pip install email_validator==1.2.1 # 新增：2023/03/08
 pip install Flask==2.0.3

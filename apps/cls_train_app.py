@@ -1,3 +1,6 @@
+import sys
+from pathlib import Path
+sys.path.append(str(Path(__file__).resolve().parents[1]))
 import pathlib
 from matplotlib.style import library
 import streamlit as st
@@ -17,10 +20,8 @@ import random
 import collections
 from PIL import Image
 from traitlets import default
-import sys
-sys.path.append("utils")
-from dataset_split import DatasetSplit
-from train_util import Trainer
+from utils.dataset_split import DatasetSplit
+from utils.train_util import Trainer
 
 
 def get_streamlit_params():

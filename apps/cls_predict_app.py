@@ -1,7 +1,8 @@
-from typing import OrderedDict
 import sys
-sys.path.append("utils")
-from networks import *
+from pathlib import Path
+sys.path.append(str(Path(__file__).resolve().parents[1]))
+from typing import OrderedDict
+from utils.networks import *
 import torch
 import streamlit as st
 import pathlib
@@ -117,7 +118,7 @@ def predict_pytorch(params, predict_button):
     # ------------------------
     # Predict
     # ------------------------
-    from predict_util import PredictDataset, Predicter
+    from utils.predict_util import PredictDataset, Predicter
 
     if predict_button:
         # 1. create predict dataset

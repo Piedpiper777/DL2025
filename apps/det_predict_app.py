@@ -1,3 +1,6 @@
+import sys
+from pathlib import Path
+sys.path.append(str(Path(__file__).resolve().parents[1]))
 import streamlit as st
 import pathlib
 import collections
@@ -17,7 +20,7 @@ from mmengine.visualization import Visualizer
 from mmdet.registry import VISUALIZERS
 import sys
 sys.path.append("utils")
-from detection.visual import DetLocalVisualizerRT
+from utils.detection.visual import DetLocalVisualizerRT
 
 
 def get_streamlit_params():
